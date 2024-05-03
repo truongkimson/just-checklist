@@ -6,14 +6,19 @@ defineProps(['items', 'onItemChange', 'onDeleteItem'])
 
 <template>
     <ul class="no-bullets">
-        <Item v-for="item in items" :key="item.id" :item="item"
-        :onDeleteItem="onDeleteItem" @itemChange="onItemChange"/>
+        <Item
+            v-for="item in items"
+            :key="item.id"
+            :item="item"
+            :onDeleteItem="onDeleteItem"
+            @itemChange="onItemChange"
+        />
     </ul>
 </template>
 
 <style scoped>
 .no-bullets {
-  list-style-type: none;
-  padding: 0;
+    list-style-type: none;
+    padding: 0;
 }
 </style>
