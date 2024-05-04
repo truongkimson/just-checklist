@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Checklist from './components/Checklist.vue'
 import NewItemInput from './components/NewItemInput.vue'
+import { type Item } from './models/Item'
 import { ref } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const emit = defineEmits(['createItem'])
-const newItem = defineModel()
+const newItem = defineModel<string>()
 
 const onEnter = () => {
-    if (newItem.value.trim() === '') return
+    if (newItem.value && newItem.value.trim() === '') return
     emit('createItem', newItem.value)
     newItem.value = ''
 }

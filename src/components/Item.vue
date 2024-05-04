@@ -1,21 +1,23 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { type Ref } from 'vue'
 import Checkbox from './Checkbox.vue'
-import { Item } from '../models/Item.vue'
+import { type Item } from '../models/Item'
 import ConfettiJSON from '../assets/animations/confetti0.json'
+import { type AnimationItem } from 'lottie-web'
 
 const props = defineProps(['item', 'onDeleteItem'])
 const emit = defineEmits(['itemChange'])
-const itemName = defineModel()
+const itemName = defineModel<string>({ required: true })
 
-const lottieAnimation = ref(null)
+const lottieAnimation: Ref<AnimationItem | null> = ref(null)
 itemName.value = props.item.name
 
 const onCheck = (item: Item) => {
     item.done = !item.done
     item.lastModified = new Date()
 
-    if (item.done) {
+    if (item.done && lottieAnimation.value) {
         lottieAnimation.value.stop() // Reset the animation
         lottieAnimation.value.play()
     }
