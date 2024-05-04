@@ -36,7 +36,7 @@ const emit = defineEmits(['check'])
 }
 
 .styled-checkbox:hover {
-    background-color: #dadcdc;
+    background-color: #dddfdf;
 }
 
 .styled-checkbox:checked:hover {
