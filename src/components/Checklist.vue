@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Item from './Item.vue'
 
-defineProps(['items', 'onItemChange', 'onDeleteItem'])
+defineProps(['items', 'onUpdateItem', 'onDeleteItem'])
 </script>
 
 <template>
@@ -11,7 +11,7 @@ defineProps(['items', 'onItemChange', 'onDeleteItem'])
             :key="item.id"
             :item="item"
             :onDeleteItem="onDeleteItem"
-            @itemChange="onItemChange"
+            :onUpdateItem="onUpdateItem"
         />
     </ul>
 </template>
